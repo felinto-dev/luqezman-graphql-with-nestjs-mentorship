@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-  # https://hub.docker.com/_/postgres
   postgres:
     image: bitnami/postgresql:11
     container_name: local_db
@@ -22,12 +21,6 @@ services:
       - 16543:80
     depends_on:
       - postgres
-  redis:
-    image: bitnami/redis:5.0.9
-    ports:
-      - 6379:6379
-    volumes:
-      - redis_data:/var/lib/redis
 
 volumes:
   local_db_data:
