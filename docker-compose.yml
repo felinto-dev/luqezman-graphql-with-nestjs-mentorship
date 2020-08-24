@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  # https://hub.docker.com/_/postgres
+  postgres:
+    image: bitnami/postgresql:11
+    container_name: local_db
+    environment:
+      - POSTGRESQL_USERNAME=local_dev
+      - POSTGRESQL_PASSWORD=local_dev
+      - POSTGRESQL_DATABASE=local_db
+    ports:
+      - 5432:5432
+    volumes:
+      - local_db_data:/bitnami/postgresql
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "email@email.com"
+      PGADMIN_DEFAULT_PASSWORD: "password"
+    ports:
+      - 16543:80
+    depends_on:
+      - postgres
+  redis:
+    image: bitnami/redis:5.0.9
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/var/lib/redis
+
+volumes:
+  local_db_data:
+  redis_data:
