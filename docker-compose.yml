@@ -5,9 +5,9 @@ services:
     image: bitnami/postgresql:11
     container_name: local_db
     environment:
-      - POSTGRESQL_USERNAME=local_dev
-      - POSTGRESQL_PASSWORD=local_dev
-      - POSTGRESQL_DATABASE=local_db
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=postgres
+      - POSTGRESQL_DATABASE=fntwork
     ports:
       - 5432:5432
     volumes:
