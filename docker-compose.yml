@@ -4,14 +4,18 @@ services:
   api:
     build:
       context: .
-      target: development
+      args:
+        - NODE_ENV=development
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - .:/opt/node_app/app:delegated
+      - ./package.json:/opt/node_app/package.json
+      - notused:/opt/node_app/app/node_modules
     ports:
       - 3000:3000
       - 9229:9229
-    command: npm run start:debug
+    command: npm run start:dev
+    environment:
+      - NODE_ENV=development
     networks:
       - backend
     depends_on:
@@ -34,3 +38,4 @@ networks:
   backend:
 volumes:
   api_db_data:
+  notused:

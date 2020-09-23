@@ -1,28 +1,24 @@
-FROM node:14-slim As development
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install --only=development
-
-COPY . .
-
-RUN npm run build
-
-FROM node:14-slim as production
+FROM node:14-slim
 
 ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+ENV NODE_ENV $NODE_ENV
 
-WORKDIR /usr/src/app
+ARG PORT=3000
+ENV PORT $PORT
+EXPOSE $PORT 9229 9230
 
-COPY package*.json ./
+RUN npm i npm@6.14.6 -g
 
-RUN npm install --only=production
+RUN mkdir /opt/node_app && chown node:node /opt/node_app
+WORKDIR /opt/node_app
 
+
+USER node
+COPY package.json package-lock.json* ./
+RUN npm install --no-optional && npm cache clean --force
+ENV PATH /opt/node_app/node_modules/.bin:$PATH
+
+WORKDIR /opt/node_app/app
 COPY . .
 
-COPY --from=development /usr/src/app/dist ./dist
-
-CMD ["node", "dist/main"]
+CMD [ "node", "./bin/www" ]
