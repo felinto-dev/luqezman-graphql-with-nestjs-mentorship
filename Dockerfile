@@ -21,4 +21,4 @@ ENV PATH /opt/node_app/node_modules/.bin:$PATH
 WORKDIR /opt/node_app/app
 COPY . .
 
-CMD [ "node", "./bin/www" ]
+CMD [ "node", "./dist/main" ]
