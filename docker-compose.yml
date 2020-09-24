@@ -1,26 +1,41 @@
-version: "3"
+version: "3.7"
 
 services:
-  postgres:
-    image: bitnami/postgresql:11
-    container_name: local_db
+  api:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    volumes:
+      - .:/opt/node_app/app:delegated
+      - ./package.json:/opt/node_app/package.json
+      - notused:/opt/node_app/app/node_modules
+    ports:
+      - 3000:3000
+      - 9229:9229
+    command: npm run start:dev
     environment:
-      - POSTGRESQL_USERNAME=postgres
-      - POSTGRESQL_PASSWORD=postgres
-      - POSTGRESQL_DATABASE=fntwork
+      - NODE_ENV=development
+    networks:
+      - backend
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres:9.6-alpine
+    networks:
+      - backend
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: api_db
+      PG_DATA: /var/lib/postgresql/data
     ports:
       - 5432:5432
     volumes:
-      - local_db_data:/bitnami/postgresql
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "email@email.com"
-      PGADMIN_DEFAULT_PASSWORD: "password"
-    ports:
-      - 16543:80
-    depends_on:
-      - postgres
-
+      - api_db_data:/var/lib/postgresql/data
+networks:
+  backend:
 volumes:
-  local_db_data:
+  api_db_data:
+  notused:
