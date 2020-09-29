@@ -1,25 +1,18 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { MongooseModule } from '@nestjs/mongoose';
 
 import configuration from './db.config';
 
 @Module({
   imports: [
     ConfigModule.forFeature(configuration),
-    TypeOrmModule.forRootAsync({
-      useFactory: (configService: ConfigService) => ({
-        type: 'postgres',
-        host: configService.get('db.host'),
-        port: configService.get('db.port'),
-        username: configService.get('db.username'),
-        password: configService.get('db.password'),
-        database: configService.get('db.name'),
-        entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: false,
+    MongooseModule.forRootAsync({
+      useFactory: (ConfigService: ConfigService) => ({
+        uri: ConfigService.get('db.url'),
       }),
-      inject: [ConfigService],
-    }),
+      inject: [ConfigService]
+    })
   ],
 })
-export class DbConfigModule {}
+export class DbConfigModule { }
