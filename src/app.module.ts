@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import appConfig from './config/app/app.config';
 import { DbConfigModule } from './config/db/db-config.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   controllers: [AppController],
@@ -15,6 +16,7 @@ import { DbConfigModule } from './config/db/db-config.module';
       load: [appConfig],
     }),
     DbConfigModule,
+    ProductsModule,
   ],
   providers: [AppService],
 })
