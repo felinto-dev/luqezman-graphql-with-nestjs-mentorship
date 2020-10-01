@@ -1,4 +1,4 @@
-import { Product } from "../../models/product.model";
+import { Product } from "../../schemas/product.schema";
 
 export const mockProductsList: Product[] = [
   {

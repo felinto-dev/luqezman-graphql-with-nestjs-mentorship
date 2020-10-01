@@ -2,7 +2,7 @@ import { ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
 
-import { Developer } from './developer.model';
+import { Developer } from './developer.schema';
 
 export type ProductDocument = Product & Document;
 

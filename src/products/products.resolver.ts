@@ -1,5 +1,5 @@
 import { Resolver, Query } from '@nestjs/graphql';
-import { Product } from './models/product.model';
+import { Product } from './schemas/product.schema';
 import { ProductsService } from './products.service';
 
 @Resolver('Products')
