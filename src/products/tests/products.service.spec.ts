@@ -2,6 +2,7 @@ import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { ProductsService } from '../products.service';
+import { mockProductsList } from './mocks/mock-product';
 
 describe('ProductsService', () => {
   let service: ProductsService;
@@ -9,7 +10,7 @@ describe('ProductsService', () => {
   const mockRepository = {
     find: jest.fn().mockImplementation(() => {
       return {
-        exec: jest.fn().mockReturnValue(['a', 'b']),
+        exec: jest.fn().mockReturnValue(mockProductsList),
       };
     })
   };
@@ -36,7 +37,7 @@ describe('ProductsService', () => {
     it('should find all elements from database', async () => {
       const products = service.findAllProducts()
 
-      expect(products).resolves.toBe(['a', 'b'])
+      expect(products).resolves.toBe(mockProductsList)
     })
   })
 });
