@@ -1,5 +1,6 @@
 import { ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+
 import { Document } from 'mongoose';
 
 export type DeveloperDocument = Developer & Document;
@@ -14,7 +15,10 @@ export class Developer {
   description?: string;
 
   @Prop()
-  installation_instructions?: string;
+  setup?: string;
+
+  @Prop()
+  website?: string;
 }
 
 export const DeveloperSchema = SchemaFactory.createForClass(Developer);
