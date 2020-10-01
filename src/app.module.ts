@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -16,8 +18,11 @@ import { ProductsModule } from './products/products.module';
       load: [appConfig],
     }),
     DbConfigModule,
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    }),
     ProductsModule,
   ],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

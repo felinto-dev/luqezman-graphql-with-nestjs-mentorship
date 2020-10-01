@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Developer {
+  name: String!
+  description: String
+  installation_instructions: String
+}
+
+type Product {
+  name: String!
+  description: String
+  installation_instructions: String
+  product_type: String!
+  developer: Developer!
+}
+
+type Query {
+  products: [Product!]!
+}

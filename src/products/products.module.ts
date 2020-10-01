@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { ProductsService } from './products.service';
 import { ProductsResolver } from './products.resolver';
-import { Product, ProductSchema } from './models/product.schema';
+import { Product, ProductSchema } from './models/product.model';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }])],
