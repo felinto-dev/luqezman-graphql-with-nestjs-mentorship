@@ -7,7 +7,7 @@ import { Product, ProductDocument } from './models/product.schema';
 export class ProductsService {
   constructor(@InjectModel(Product.name) private productModel: Model<ProductDocument>) { }
 
-  async findAll(): Promise<Product[]> {
+  async findAllProducts(): Promise<Product[]> {
     return this.productModel.find().exec();
   }
 }

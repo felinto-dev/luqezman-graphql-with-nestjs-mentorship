@@ -6,7 +6,13 @@ import { ProductsService } from './products.service';
 describe('ProductsService', () => {
   let service: ProductsService;
 
-  const mockRepository = {};
+  const mockRepository = {
+    find: jest.fn().mockImplementation(() => {
+      return {
+        exec: jest.fn().mockReturnValue(['a', 'b']),
+      };
+    })
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -25,4 +31,12 @@ describe('ProductsService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  describe('findAll()', () => {
+    it('should find all elements from database', async () => {
+      const products = service.findAllProducts()
+
+      expect(products).resolves.toBe(['a', 'b'])
+    })
+  })
 });
