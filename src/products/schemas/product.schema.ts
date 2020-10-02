@@ -1,8 +1,8 @@
 import { Field, ObjectType, registerEnumType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { ProductType } from '../interfaces/product-type.enum';
 
+import { ProductType } from '../interfaces/product-type.enum';
 import { Developer } from './developer.schema';
 
 export type ProductDocument = Product & Document;
