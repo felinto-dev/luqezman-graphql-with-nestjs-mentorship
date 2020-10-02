@@ -1,0 +1,5 @@
+export enum ProductType {
+  PLUGIN = 'PLUGIN',
+  THEME = 'THEME',
+  ELEMENTOR_TEMPLATE = 'ELEMENTOR_TEMPLATE',
+}

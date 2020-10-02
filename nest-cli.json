@@ -5,7 +5,9 @@
     "plugins": [
       {
         "name": "@nestjs/graphql/plugin",
-        "typeFileNameSuffix": [".schema.ts"]
+        "options": {
+          "typeFileNameSuffix": [".schema.ts"]
+        }
       }
     ]
   }

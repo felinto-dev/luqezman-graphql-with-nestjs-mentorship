@@ -5,15 +5,24 @@
 type Developer {
   name: String!
   description: String
-  installation_instructions: String
+  setup: String
+  website: String
 }
 
 type Product {
+  developer: [Developer!]!
   name: String!
   description: String
   installation_instructions: String
-  product_type: String!
-  developer: Developer!
+  type: ProductType!
+  version: String!
+  supportUrl: String!
+}
+
+enum ProductType {
+  PLUGIN
+  THEME
+  ELEMENTOR_TEMPLATE
 }
 
 type Query {
