@@ -1,4 +1,4 @@
-import { ProductType } from "src/products/interfaces/product-type.enum";
+import { ProductType } from "../../interfaces/product-type.enum";
 import { Product } from "../../schemas/product.schema";
 
 export const mockProductsList: Product[] = [
