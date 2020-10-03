@@ -10,7 +10,7 @@ type Developer {
 }
 
 type Product {
-  developer: [Developer!]!
+  developer: Developer!
   name: String!
   description: String
   installation_instructions: String
