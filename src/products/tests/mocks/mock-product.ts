@@ -5,7 +5,7 @@ export const mockProductsList: Product[] = [
   {
     name: 'Elementor PRO',
     description: 'Elementor is a awesome plugin',
-    installation_instructions: '',
+    installationInstructions: '',
     type: ProductType.PLUGIN,
     developer: {
       name: 'Elementor'
@@ -16,7 +16,7 @@ export const mockProductsList: Product[] = [
   {
     name: 'WP Rocket',
     description: 'WP Rocket is a awesome plugin for cache',
-    installation_instructions: 'You need to uninstall any cache plugin first.',
+    installationInstructions: 'You need to uninstall any cache plugin first.',
     type: ProductType.PLUGIN,
     developer: {
       name: 'WP Rocket'
@@ -27,7 +27,7 @@ export const mockProductsList: Product[] = [
   {
     name: 'Yoast SEO Premium',
     description: 'Yoast SEO Premium is a awesome plugin for SEO',
-    installation_instructions: 'You need to uninstall any SEO plugin first.',
+    installationInstructions: 'You need to uninstall any SEO plugin first.',
     type: ProductType.PLUGIN,
     developer: {
       name: 'Yoast SEO'
