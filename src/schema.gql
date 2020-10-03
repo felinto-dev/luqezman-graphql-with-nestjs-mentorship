@@ -5,7 +5,7 @@
 type Developer {
   name: String!
   description: String
-  setup: String
+  installationInstructions: String
   website: String
 }
 
@@ -13,7 +13,7 @@ type Product {
   developer: Developer!
   name: String!
   description: String
-  installation_instructions: String
+  installationInstructions: String
   type: ProductType!
   version: String!
   supportUrl: String!
