@@ -14,7 +14,7 @@ export class Developer {
   description?: string;
 
   @Prop()
-  setup?: string;
+  installationInstructions?: string;
 
   @Prop()
   website?: string;

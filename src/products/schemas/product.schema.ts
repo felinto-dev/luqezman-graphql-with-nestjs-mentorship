@@ -20,7 +20,7 @@ export class Product {
   description?: string;
 
   @Prop()
-  installation_instructions?: string;
+  installationInstructions?: string;
 
   @Prop({ type: String, enum: [ProductType.PLUGIN, ProductType.THEME, ProductType.ELEMENTOR_TEMPLATE], required: true })
   type: ProductType;
