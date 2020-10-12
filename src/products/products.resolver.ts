@@ -1,4 +1,5 @@
 import { Resolver, Query } from '@nestjs/graphql';
+
 import { Product } from './schemas/product.schema';
 import { ProductsService } from './products.service';
 
