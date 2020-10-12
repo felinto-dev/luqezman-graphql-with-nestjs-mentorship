@@ -8,11 +8,9 @@ describe('ProductsService', () => {
   let service: ProductsService;
 
   const mockRepository = {
-    find: jest.fn().mockImplementation(() => {
-      return {
-        exec: jest.fn().mockReturnValue(mockProductsList),
-      };
-    })
+    find: jest.fn().mockImplementation(() => ({
+      exec: jest.fn().mockReturnValue(mockProductsList),
+    }))
   };
 
   beforeEach(async () => {
