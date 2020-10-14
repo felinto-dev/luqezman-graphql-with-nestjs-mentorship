@@ -9,7 +9,6 @@ describe('ProductsResolver', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [],
       providers: [
         ProductsResolver,
         {
