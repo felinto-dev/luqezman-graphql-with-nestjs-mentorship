@@ -27,7 +27,7 @@ describe('ProductsResolver', () => {
   });
 
   describe('@Query products', () => {
-    it('should get all products list', async () => {
+    it('should get an array of products', async () => {
       const products = resolver.products()
 
       expect(products).resolves.toBe(mockProductsList)
