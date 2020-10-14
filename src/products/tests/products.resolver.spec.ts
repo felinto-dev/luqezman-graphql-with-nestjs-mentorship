@@ -28,9 +28,9 @@ describe('ProductsResolver', () => {
 
   describe('@Query products', () => {
     it('should get all products list', async () => {
-      const service = resolver.products()
+      const products = resolver.products()
 
-      expect(service).resolves.toBe(mockProductsList)
+      expect(products).resolves.toBe(mockProductsList)
     })
   })
 });
