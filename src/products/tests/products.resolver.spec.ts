@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { ProductsResolver } from '../products.resolver';
 import { ProductsService } from '../products.service';
-import { mockProductsList } from './mocks/mock-product';
+import { mockProductsList } from './__mocks__/mock-product';
 
 describe('ProductsResolver', () => {
   let resolver: ProductsResolver;
