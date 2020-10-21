@@ -7,7 +7,7 @@ export const mockProductsList: Product[] = [
   {
     name: faker.random.word(),
     description: faker.random.words(),
-    type: faker.random.arrayElement([ProductType.PLUGIN, ProductType.THEME]),
+    type: faker.random.arrayElement(Object.values(ProductType)),
     developer: {
       name: faker.company.companyName()
     },
@@ -18,7 +18,7 @@ export const mockProductsList: Product[] = [
     name: faker.random.word(),
     description: faker.random.words(),
     installationInstructions: faker.random.words(),
-    type: faker.random.arrayElement([ProductType.PLUGIN, ProductType.THEME]),
+    type: faker.random.arrayElement(Object.values(ProductType)),
     developer: {
       name: faker.company.companyName()
     },
@@ -29,7 +29,7 @@ export const mockProductsList: Product[] = [
     name: faker.random.word(),
     description: faker.random.words(),
     installationInstructions: faker.random.words(),
-    type: faker.random.arrayElement([ProductType.PLUGIN, ProductType.THEME]),
+    type: faker.random.arrayElement(Object.values(ProductType)),
     developer: {
       name: faker.company.companyName()
     },
