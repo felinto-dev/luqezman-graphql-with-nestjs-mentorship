@@ -11,7 +11,7 @@ export const mockProductsList: Product[] = [
     developer: {
       name: faker.company.companyName()
     },
-    version: String(faker.random.float({ precision: 3 })),
+    version: faker.system.semver(),
     supportUrl: faker.internet.url()
   },
   {
@@ -22,7 +22,7 @@ export const mockProductsList: Product[] = [
     developer: {
       name: faker.company.companyName()
     },
-    version: String(faker.random.float({ precision: 3 })),
+    version: faker.system.semver(),
     supportUrl: faker.internet.url()
   },
   {
@@ -33,7 +33,7 @@ export const mockProductsList: Product[] = [
     developer: {
       name: faker.company.companyName()
     },
-    version: String(faker.random.float({ precision: 3 })),
+    version: faker.system.semver(),
     supportUrl: faker.internet.url()
   },
 ]
