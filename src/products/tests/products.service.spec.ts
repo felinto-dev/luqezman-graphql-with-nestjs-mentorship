@@ -3,15 +3,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { ProductsService } from '../products.service';
 import { mockProductsList } from './__mocks__/mock-product';
+import { mockRepository } from './__mocks__/mock-repository';
 
 describe('ProductsService', () => {
   let service: ProductsService;
-
-  const mockRepository = {
-    find: jest.fn().mockImplementation(() => ({
-      exec: jest.fn().mockReturnValue(mockProductsList),
-    }))
-  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
