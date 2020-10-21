@@ -1,40 +1,39 @@
 import { ProductType } from "../../interfaces/product-type.enum";
 import { Product } from "../../schemas/product.schema";
 
-import faker from 'faker'
+import * as faker from 'faker'
 
 export const mockProductsList: Product[] = [
   {
-    name: faker.random.words(),
-    description: 'Elementor is a awesome plugin',
-    installationInstructions: '',
-    type: ProductType.PLUGIN,
+    name: faker.random.word(),
+    description: faker.random.words(),
+    type: faker.random.arrayElement([ProductType.PLUGIN, ProductType.THEME]),
     developer: {
-      name: 'Elementor'
+      name: faker.company.companyName()
     },
-    version: '2.0.0',
-    supportUrl: 'https://google.com'
+    version: String(faker.random.float({ precision: 3 })),
+    supportUrl: faker.internet.url()
   },
   {
-    name: 'WP Rocket',
-    description: 'WP Rocket is a awesome plugin for cache',
-    installationInstructions: 'You need to uninstall any cache plugin first.',
-    type: ProductType.PLUGIN,
+    name: faker.random.word(),
+    description: faker.random.words(),
+    installationInstructions: faker.random.words(),
+    type: faker.random.arrayElement([ProductType.PLUGIN, ProductType.THEME]),
     developer: {
-      name: 'WP Rocket'
+      name: faker.company.companyName()
     },
-    version: '2.0.0',
-    supportUrl: 'https://google.com'
+    version: String(faker.random.float({ precision: 3 })),
+    supportUrl: faker.internet.url()
   },
   {
-    name: 'Yoast SEO Premium',
-    description: 'Yoast SEO Premium is a awesome plugin for SEO',
-    installationInstructions: 'You need to uninstall any SEO plugin first.',
-    type: ProductType.PLUGIN,
+    name: faker.random.word(),
+    description: faker.random.words(),
+    installationInstructions: faker.random.words(),
+    type: faker.random.arrayElement([ProductType.PLUGIN, ProductType.THEME]),
     developer: {
-      name: 'Yoast SEO'
+      name: faker.company.companyName()
     },
-    version: '2.0.0',
-    supportUrl: 'https://google.com'
+    version: String(faker.random.float({ precision: 3 })),
+    supportUrl: faker.internet.url()
   },
 ]
