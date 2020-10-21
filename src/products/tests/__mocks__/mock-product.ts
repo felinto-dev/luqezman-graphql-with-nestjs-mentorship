@@ -1,9 +1,11 @@
 import { ProductType } from "../../interfaces/product-type.enum";
 import { Product } from "../../schemas/product.schema";
 
+import faker from 'faker'
+
 export const mockProductsList: Product[] = [
   {
-    name: 'Elementor PRO',
+    name: faker.random.words(),
     description: 'Elementor is a awesome plugin',
     installationInstructions: '',
     type: ProductType.PLUGIN,
