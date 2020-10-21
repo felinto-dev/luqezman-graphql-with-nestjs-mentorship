@@ -22,7 +22,7 @@ export class Product {
   @Prop()
   installationInstructions?: string;
 
-  @Prop({ type: String, enum: [ProductType.PLUGIN, ProductType.THEME, ProductType.ELEMENTOR_TEMPLATE], required: true })
+  @Prop({ type: String, enum: Object.values(ProductType), required: true })
   type: ProductType;
 
   @Prop({ required: true })
