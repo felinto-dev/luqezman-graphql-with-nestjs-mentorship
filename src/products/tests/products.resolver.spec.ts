@@ -3,6 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ProductsResolver } from '../products.resolver';
 import { ProductsService } from '../products.service';
 import { mockProductsList } from './__mocks__/mock-product';
+import { mockService } from './__mocks__/mock-service';
 
 describe('ProductsResolver', () => {
   let resolver: ProductsResolver;
@@ -13,7 +14,7 @@ describe('ProductsResolver', () => {
         ProductsResolver,
         {
           provide: ProductsService,
-          useValue: {}
+          useValue: mockService
         }
       ],
     }).compile();
