@@ -1,4 +1,4 @@
-import { ProductType } from "../../interfaces/product-type.enum";
+import { ProductType } from "../../types/product-type.enum";
 import { Product } from "../../schemas/product.schema";
 
 import * as faker from 'faker'
