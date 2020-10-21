@@ -13,7 +13,7 @@ export class Product {
   @Prop({ required: true, type: Types.ObjectId, ref: 'Developer' })
   developer: Developer;
 
-  @Prop({ required: true, unique: true })
+  @Prop({ unique: true, required: true })
   name: string;
 
   @Prop()
