@@ -32,8 +32,6 @@ export class Product {
   supportUrl: string;
 }
 
-registerEnumType(ProductType, {
-  name: 'ProductType',
-});
+registerEnumType(ProductType, { name: 'ProductType' });
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
