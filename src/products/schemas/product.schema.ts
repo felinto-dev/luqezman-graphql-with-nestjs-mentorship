@@ -10,7 +10,7 @@ export type ProductDocument = Product & Document;
 @ObjectType()
 @Schema()
 export class Product {
-  @Prop({ required: true, type: Types.ObjectId, ref: 'Developer' })
+  @Prop({ type: Types.ObjectId, ref: 'Developer', required: true })
   developer: Developer;
 
   @Prop({ unique: true, required: true })
