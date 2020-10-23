@@ -1,7 +1,7 @@
+import * as faker from 'faker'
+
 import { ProductType } from "../../types/product-type.enum";
 import { Product } from "../../schemas/product.schema";
-
-import * as faker from 'faker'
 
 export const mockProductsList: Product[] = [
   {
