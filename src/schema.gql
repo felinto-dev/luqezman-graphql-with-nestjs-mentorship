@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Developer {
+  name: String!
+  description: String
+  installationInstructions: String
+  website: String
+}
+
+type Product {
+  developer: Developer!
+  name: String!
+  description: String
+  installationInstructions: String
+  type: ProductType!
+  version: String!
+  supportUrl: String!
+}
+
+enum ProductType {
+  PLUGIN
+  THEME
+  ELEMENTOR_TEMPLATE
+}
+
+type Query {
+  products: [Product!]!
+}
