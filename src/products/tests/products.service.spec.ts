@@ -2,7 +2,7 @@ import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { ProductsService } from '../products.service';
-import { mockProductsList } from './__mocks__/mock-product';
+import { mockProductsList } from '../schemas/__mocks__/product.schema';
 import { mockRepository } from './__mocks__/mock-product-repository';
 
 describe('ProductsService', () => {

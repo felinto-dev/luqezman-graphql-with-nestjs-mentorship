@@ -1,5 +1,5 @@
-import { mockProductsList } from "../tests/__mocks__/mock-product";
+import { mockProductsList } from "../schemas/__mocks__/product.schema";
 
-export const mockService = {
+export const ProductsService = {
   findAllProducts: jest.fn(() => mockProductsList)
 };

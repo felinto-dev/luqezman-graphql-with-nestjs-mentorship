@@ -2,8 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { ProductsResolver } from '../products.resolver';
 import { ProductsService } from '../products.service';
-import { mockProductsList } from './__mocks__/mock-product';
-import { mockService } from '../__mocks__/product.service';
+import { mockProductsList } from '../schemas/__mocks__/product.schema';
+
+jest.mock("../products.service")
 
 describe('ProductsResolver', () => {
   let resolver: ProductsResolver;
@@ -12,10 +13,7 @@ describe('ProductsResolver', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         ProductsResolver,
-        {
-          provide: ProductsService,
-          useValue: mockService
-        }
+        ProductsService
       ],
     }).compile();
 
