@@ -5,6 +5,8 @@ import { ProductsService } from '../products.service';
 import { mockProductsList } from '../schemas/__mocks__/product.schema';
 import { mockRepository } from './__mocks__/mock-product-repository';
 
+jest.unmock('../products.service')
+
 describe('ProductsService', () => {
   let service: ProductsService;
 

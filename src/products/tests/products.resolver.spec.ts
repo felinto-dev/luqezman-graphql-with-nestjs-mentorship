@@ -4,7 +4,7 @@ import { ProductsResolver } from '../products.resolver';
 import { ProductsService } from '../products.service';
 import { mockProductsList } from '../schemas/__mocks__/product.schema';
 
-jest.mock('../products.service')
+jest.unmock('../products.resolver')
 
 describe('ProductsResolver', () => {
   let resolver: ProductsResolver;

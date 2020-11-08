@@ -61,6 +61,7 @@
     "typescript": "^3.7.4"
   },
   "jest": {
+    "automock": true,
     "moduleDirectories": [
       "node_modules",
       "src"
