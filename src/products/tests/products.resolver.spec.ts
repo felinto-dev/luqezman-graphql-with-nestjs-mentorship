@@ -4,7 +4,7 @@ import { ProductsResolver } from '../products.resolver';
 import { ProductsService } from '../products.service';
 import { mockProductsList } from '../schemas/__mocks__/product.schema';
 
-jest.mock("../products.service")
+jest.mock('../products.service.ts')
 
 describe('ProductsResolver', () => {
   let resolver: ProductsResolver;
@@ -13,7 +13,7 @@ describe('ProductsResolver', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         ProductsResolver,
-        ProductsService
+        ProductsService,
       ],
     }).compile();
 
@@ -26,9 +26,9 @@ describe('ProductsResolver', () => {
 
   describe('@Query products', () => {
     it('should get an array of products', async () => {
-      const products = resolver.products()
+      const products = await resolver.products()
 
-      expect(products).resolves.toBe(mockProductsList)
+      expect(products).toBe(mockProductsList)
     })
   })
 });

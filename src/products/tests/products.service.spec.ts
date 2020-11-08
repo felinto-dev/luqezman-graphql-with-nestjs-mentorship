@@ -28,9 +28,9 @@ describe('ProductsService', () => {
 
   describe('findAll()', () => {
     it('should find all elements from database', async () => {
-      const products = service.findAllProducts()
+      const products = await service.findAllProducts()
 
-      expect(products).resolves.toBe(mockProductsList)
+      expect(products).toBe(mockProductsList)
     })
   })
 });
