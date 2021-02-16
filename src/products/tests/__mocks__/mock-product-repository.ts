@@ -1,4 +1,4 @@
-import { mockProductsList } from "./mock-product";
+import { mockProductsList } from "../../schemas/__mocks__/product.schema";
 
 export const mockRepository = {
   find: jest.fn(() => ({

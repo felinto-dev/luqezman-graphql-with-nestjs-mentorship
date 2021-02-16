@@ -61,11 +61,19 @@
     "typescript": "^3.7.4"
   },
   "jest": {
+    "automock": true,
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",
       "ts"
     ],
+    "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/$1"
+    },
     "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
